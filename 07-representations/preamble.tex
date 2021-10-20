@@ -1,0 +1,48 @@
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{emptypage}
+\usepackage{subcaption}
+\usepackage{multicol}
+\renewcommand{\ttdefault}{jkptt}
+
+\usepackage[T1]{fontenc}
+
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{setspace}
+
+
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+\makeatletter
+
+\declaretheoremstyle[headfont=\bfseries, bodyfont=\normalfont, mdframed={ nobreak, innerbottommargin=10pt, innertopmargin=7pt} ]{box}
+\declaretheoremstyle[headfont=\bfseries, bodyfont=\normalfont, numbered=no, mdframed={ rightline=false, topline=false, bottomline=false}]{proof}
+
+\declaretheorem[style=box, name=Definition]{definition}
+\declaretheorem[style=proof, name=Proof]{_proof}
+\renewenvironment{proof}[1][\proofname]{\begin{_proof}}{\end{_proof}}
+
+% Figure support 
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+
+\graphicspath{
+    {images/}
+}
